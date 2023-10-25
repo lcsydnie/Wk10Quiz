@@ -50,7 +50,7 @@ for (let i = 0; i < 10; i++) {
       let rad = i * 8;
       let x = rad * cos(j);
       let y = rad * sin(j);
-      var z = sin(frameCount) * 50;
+      var z = sin(frameCount + i * 10) * 50;
 
       vertex(x, y, z);
     }
