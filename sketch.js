@@ -37,11 +37,9 @@ let spectrum = fft.analyze();
 colorMode(HSB);
 //draw the spectrum using a log scale to show energy per octave
 for (let i = 0; i < spectrum.length; i++) {
-//let x = map(log(i), 0, log(spectrum.length), 0, width);
-let h = map(spectrum[i], 0, 255, 0, height);
-fill(i * (255/spectrum.length), 255, 255);
-//let rectangle_width = (log(i + 1) - log(i)) * (width / log(spectrum.length));
-rect(i * (width/spectrum.length), height, width/spectrum.length, -h)
+  var r = map(sin(i), -1, 1, 0, 255);
+  var g = map(i, 0, spectrum.length, 0, 255);
+  var b = map(cos(i), -1, 1, 255, 0);
 }
 
 for (let i = 0; i < 50; i++) {
