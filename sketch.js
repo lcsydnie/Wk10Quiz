@@ -27,7 +27,8 @@ let spectralCentroid = 0;
 
 background(30);
 rotateX(60);
-
+noFill();
+stroke(255);
 
 // Request fresh data from the FFT analysis
 let spectrum = fft.analyze();
@@ -49,7 +50,9 @@ for (let i = 0; i < 10; i++) {
       let rad = i * 8;
       let x = rad * cos(j);
       let y = rad * sin(j);
-      vertex(x, y);
+      var z = sin(frameCount) * 50;
+
+      vertex(x, y, z);
     }
     endShape(CLOSE);
   }
