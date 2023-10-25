@@ -45,12 +45,21 @@ rect(i * (width/spectrum.length), height, width/spectrum.length, -h)
 }
 
 for (let i = 0; i < 10; i++) {
+
+  var r = map(sin(frameCount), -1, 1, 0, 255);
+  var g = map(i, 0, 20, 0 ,255);
+  var b = map(cos(frameCount), -1, 1, 255, 0);
+
+  stroke(r, g, b);
+
+
+
     beginShape();
     for (let j = 0; j < 360; j += 10) {
       let rad = i * 8;
       let x = rad * cos(j);
       let y = rad * sin(j);
-      var z = sin(frameCount + i * 10) * 50;
+      var z = sin(frameCount * 2 + i * 10) * 50;
 
       vertex(x, y, z);
     }
