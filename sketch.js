@@ -44,19 +44,19 @@ fill(i * (255/spectrum.length), 255, 255);
 rect(i * (width/spectrum.length), height, width/spectrum.length, -h)
 }
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 50; i++) {
 
-  var r = map(sin(frameCount), -1, 1, 0, 255);
-  var g = map(i, 0, 20, 0 ,255);
-  var b = map(cos(frameCount), -1, 1, 255, 0);
+  var r = map(sin(frameCount / 2), -1, 1, 100, 200);
+  var g = map(i, 0, 50, 100 ,200);
+  var b = map(cos(frameCount), -1, 1, 200, 100);
 
   stroke(r, g, b);
 
-
+  rotate(frameCount / 10);
 
     beginShape();
-    for (let j = 0; j < 360; j += 10) {
-      let rad = i * 8;
+    for (let j = 0; j < 360; j += 90) {
+      let rad = i * 3;
       let x = rad * cos(j);
       let y = rad * sin(j);
       var z = sin(frameCount * 2 + i * 10) * 50;
