@@ -17,13 +17,11 @@ song.connect(fft);
 function draw() {
 // Give the user a hint on how to interact with the sketch
 if (getAudioContext().state !== 'running') {
-background(220);
-text('tap here to play some sound!', 10, 20, width - 20);
-// Early exit of the draw loop
-return;
+  background(220);
+
+  // Early exit of the draw loop
+  return;
 }
-let centroidplot = 0.0;
-let spectralCentroid = 0;
 
 background(30);
 rotateX(60);
